@@ -18,6 +18,12 @@
             {% endfor %}
         </ul>
     </div>
+    <div class="air-status">
+	    <div class=current-temperature id="current_air_temp">
+		<p>&nbsp;室温：{{ devices_te }}&nbsp;℃</p>
+	    </div>
+    </div>
+
     <div class="air-product">
         {% for appliance in appliances_air %}
             {# Set 0th to activate #}
@@ -198,11 +204,13 @@
                             <dev class="signal" id="mode-auto" >&nbsp;auto</dev>
                         </i>
                     </div>
+		    <!--
                     <div class="airbtn">
                         <i class="fas fa-wind">
                             <dev class="signal" id="mode-blow" >&nbsp;blow</dev>
                         </i>
                     </div>
+		    --/>
                     <div class="airbtn">
                         <i class="fas fa-snowflake">
                             <dev class="signal" id="mode-cool" >&nbsp;cool</dev>
@@ -251,11 +259,13 @@
                             <dev class="signal" id="vol-5" >&nbsp;5</dev>
                         </i>
                     </div>
+		    <!---
                     <div class="airbtn">
                         <i class="fas fa-fan">
                             <dev class="signal" id="vol-6" >&nbsp;6</dev>
                         </i>
                     </div>
+		    --/>
                 </div>
                 <div class="btnBox air dir id-{{ appliance['id'] }}">
                     direction

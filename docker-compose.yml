@@ -3,6 +3,6 @@ services:
     web:
         build: .
         environment:
-            - REMO_TOKEN=your_token
+            - REMO_TOKEN=ZXctHoBIS-xIaN4RswDnlWB1Lu40NhiaWF1FjFnOecE.O7AsXGmnwm9KPBN1tO2Ek0aU36erMaNC64ZfDjxMYxE
         ports:
             - 5000:5000

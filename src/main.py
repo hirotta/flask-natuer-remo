@@ -21,19 +21,24 @@ app.config.from_object(__name__)
 
 @app.route('/')
 def top():
-    image_path = "./static/images"
-    files = os.listdir(image_path)
+    #image_path = "./static/images"
+    #files = os.listdir(image_path)
     # If a file other than default.jpg exists, display image.jpg.
-    if len(files) > 1:
-        files.remove("default.jpg")
-    image_list = list(map(lambda image: "images/" + image, files))
-    return render_template('top.html', image_list=image_list)
+    #if len(files) > 1:
+    #    files.remove("default.jpg")
+    #image_list = list(map(lambda image: "images/" + image, files))
+    #return render_template('top.html', image_list=image_list)
+
+    appliances_air = appliances_client.appliances_get_air()
+    devices_te = appliances_client.devices_get_current_air()
+    return render_template('air.html', appliances_air=appliances_air, devices_te=devices_te)
 
 
 @app.route('/air')
 def air():
     appliances_air = appliances_client.appliances_get_air()
-    return render_template('air.html', appliances_air=appliances_air)
+    devices_te = appliances_client.devices_get_current_air()
+    return render_template('air.html', appliances_air=appliances_air, devices_te=devices_te)
 
 
 @app.route('/tv')

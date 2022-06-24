@@ -39,12 +39,12 @@ class AppliancesDataClient(object):
         else:
             return self.init_error
     
-    def devices_get_current_air(self):
-        self.nclient.get_devices()
-        if self.json_data:
-            for data in self json.data:
-                current_air_temp = data['newest_event']['te']['val']
-                return self.current_air_temp
+    #def devices_get_current_air(self):
+    #    self.nclient.get_devices()
+    #    if self.json_data:
+    #        for data in self.json_data:
+    #            current_air_temp = data['newest_event']['te']['val']
+    #            return self.current_air_temp
 
     def appliances_get_air(self, air_id=None):
         self.json_load() # load json, because update temperature

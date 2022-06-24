@@ -28,17 +28,18 @@ def top():
     #    files.remove("default.jpg")
     #image_list = list(map(lambda image: "images/" + image, files))
     #return render_template('top.html', image_list=image_list)
-
-    appliances_air = appliances_client.appliances_get_air()
-    devices_te = appliances_client.devices_get_current_air()
-    return render_template('air.html', appliances_air=appliances_air, devices_te=devices_te)
-
+	
+	appliances_air = appliances_client.appliances_get_air()
+	#devices_te = appliances_client.devices_get_current_air()
+	#return render_template('air.html', appliances_air=appliances_air, devices_te=devices_te)
+	return render_template('air.html', appliances_air=appliances_air)
 
 @app.route('/air')
 def air():
     appliances_air = appliances_client.appliances_get_air()
-    devices_te = appliances_client.devices_get_current_air()
-    return render_template('air.html', appliances_air=appliances_air, devices_te=devices_te)
+    #devices_te = appliances_client.devices_get_current_air()
+	#return render_template('air.html', appliances_air=appliances_air, devices_te=devices_te)
+    return render_template('air.html', appliances_air=appliances_air)
 
 
 @app.route('/tv')
